@@ -43,9 +43,9 @@ class Gradebook:
         """
         Finds the group ID shown on Canvas.
         """
-        use_name = self.assignment_group_name if force_other_group is not None else force_other_group
+        use_name = self.assignment_group_name if force_other_group is None else force_other_group
         for group in self.course.get_assignment_groups():
-            if group.name == self.use_name:
+            if group.name == use_name:
                 return group.id
         
         # create new group
