@@ -415,7 +415,7 @@ class Gradescope(Gradebook):
             self.gradebook.loc[(
                 (self.gradebook['assignment_score'].isna()) & 
                 (self.gradebook['redemption'] > 0)
-            ), 'slip_day'] = 1
+            ), 'slip_day'] = 0
 
         # process lateness penalty (NOTE: after adding raw redemption)
         if self.lateness_policy == 'penalty':     
